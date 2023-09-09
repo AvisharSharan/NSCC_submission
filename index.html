@@ -1,0 +1,304 @@
+<html>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .body{
+            /*box-shadow: 0px 80px 100px rgba(0, 0, 0, 0.848) inset;*/
+            background-color: rgba(0, 0, 0, 0.52);
+            background-image: url(images/moviesTile.jpg);
+            background-blend-mode: multiply;
+            background-repeat: no-repeat;
+        }
+        .header{
+            height: 90px;
+            width: 100%;
+            min-width: 740px;
+        }
+        .headerLogo{
+            margin-left: 3%;
+            width: 167px;
+            height: 90px;
+            background-image: url(images/Netflix-Logo.png);
+            background-size: 167px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .parentContainer{
+            position: relative;
+            align-self: center;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 4px;
+            width: 450px;
+            height: 660px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 90px;
+        }
+        .signInContainer{
+            width: 314px;
+            height: 560px;
+            padding-top: 60px;
+            padding-bottom: 40px;
+            padding-left: 68px;
+            padding-right: 68px;
+        }
+        .signInContainerMain{
+            width: 314px;
+            height: 364px;
+        }
+        .Sign-in-text{
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;;
+            margin-bottom: 28px;
+            margin-top: 0;
+            font-size: 32px;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+        }
+        .idContainer{
+            background-color: transparent;
+            padding-bottom: 16px;
+            position: relative;
+        }
+        .id-text-field{
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            border: none;
+            border-radius: 4px;
+            height: 50px;
+            width: 314px;
+            line-height: 50px;
+            padding: 16px 20px 0;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            outline: none;
+            transition: 0.1ms;
+            transition-property: "background-color";
+        }
+        .id-text-field:focus{
+            background-color: #434343;
+        }
+        .id-text-field:focus + .idLabel,
+        .id-text-field:valid + .idLabel{  
+            font-size: 11px;
+            top: 5px;
+            pointer-events: none;
+        }
+        .idLabel{
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            font-size: 16px;
+            color: #8c8c8c;
+            position: absolute;
+            top: 15.6px;
+            Left: 20px;
+            text-size-adjust: 100%;
+            transition: 0.1s;
+            transition-property: "font-size","top";
+        }
+        .passContainer{
+            background-color: transparent;
+            padding-bottom: 16px;
+            position: relative;
+        }
+        .pass-text-field{
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            border: none;
+            border-radius: 4px;
+            height: 50px;
+            width: 314px;
+            line-height: 50px;
+            padding: 16px 20px 0;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            outline: none;
+            transition: 0.1ms;
+            transition-property: "background-color";
+        }
+        .passLabel{
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            font-size: 16px;
+            color: #8c8c8c;
+            position: absolute;
+            top: 15px;
+            Left: 20px;
+            text-size-adjust: 100%;
+            transition: 0.1s;
+            transition-property: "font-size","top";
+        }
+        .pass-text-field:focus{
+            background-color: #434343;
+        }
+        .pass-text-field:focus + .passLabel,
+        .pass-text-field:valid + .passLabel{
+            font-size: 11px;
+            top: 5px;
+            pointer-events: none;
+        }
+        .sign-in-button{
+            position: relative;
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            color: white;
+            background-color: #e50914;
+            border-radius: 4px;
+            border: none;
+            height: 48px;
+            width: 314px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .formhelpcontainer{
+            background-color: transparent;
+            width: 314px;
+            height: 18.73px;
+            margin-top: 1px;
+        }
+        Input[type="checkbox"]{
+            position: relative;
+            margin: 0px;
+            height: 16px;
+            width: 16px;
+            background-color: #8c8c8c;
+            border-radius: 2px;
+        }     
+        label{
+            color: #b3b3b3;
+            font-size: 13px;
+            position: relative;
+            top: -2.5px;
+            margin: 0px;
+            user-select: none;
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+        }
+        .needHelpText{
+            color: #b3b3b3;
+            font-size: 13px;
+            position: relative;
+            top: -20px;
+            left: 246px;
+            text-decoration-line: none;
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            transition: 0.1ms;
+            transition-property: "text-decoration-line";      
+        }
+        .needHelpText:hover{
+            text-decoration-line: underline;
+        }
+        .otherHelpMain{
+            position: absolute;
+            margin-top: 6px;
+            width: 314px;
+            height: 196.18px;
+        }
+        .newSignUp{
+            position: relative;
+            width: 314px;
+            height: 20.36px;
+            background-color: transparent;
+            margin-top: 16px;
+        }
+        .newSignUpText{
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            color: #737373;
+        }
+        .signUpNowText{
+            position: relative;
+            top: -20px;
+            left: 117px;
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            color: white;
+            text-decoration-line: none;
+            transition: 0.1ms;
+            transition-property: "text-decoration-line";
+        }
+        .signUpNowText:hover{
+            text-decoration-line: underline;
+        }
+        .captchaText{
+            position: relative;
+            margin-top: 13px;
+            margin-bottom: 13px;
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            color: #8c8c8c;
+            font-size: 13px;
+        }
+        .learnMoreText{
+            position: relative;
+            font-family: "Netflix Sans",'Helvetica','Segoe UI','Roboto','Ubuntu',sans-serif;
+            font-size: 13px;
+            color: #0071EB;
+            text-decoration-line: none;
+            transition: 0.1ms;
+            transition-property: "text-decoration-line";
+            top: -29.5px;
+            left: 141px;
+        }
+        .learnMoreText:hover{
+            text-decoration-line: underline;
+        }
+        .footerContainer{
+            position: relative;
+            top: 326px;
+            background-color: greenyellow;
+            height: 241.70px;
+            width: 100%;
+            background-clip: border-box;
+            padding-bottom: 20px;
+        }
+        .foorterMain{
+            background-color: #e50914;
+            width: 100%;
+            height: 241.7px;
+            position: relative;
+        }
+    </style>
+    <title>Netflix(Clone)</title>
+    <body class="body">
+        <div class="header">
+            <div class="headerLogo">
+            </div>
+        </div>
+        <div class="parentContainer">
+            <div class="signInContainer">
+                <div class="signInContainerMain">
+                    <h1 class="Sign-in-text">Sign In</h1>
+                    <div class="idContainer">
+                        <input type="text" class="id-text-field" id="id_idField" required>
+                        <label class="idLabel" for="id_idField">Email or phone number</label>
+                    </div>
+                    <div class="passContainer">
+                        <input type="password" class="pass-text-field" id="id_passField" required>
+                        <label class="passLabel" for="id_passField">Password</label>
+                    </div>
+                    <div class="signinbutton">
+                        <button class="sign-in-button">Sign In</button>
+                    </div>
+                    <div class="formhelpcontainer">
+                        <div class="checkboxRem">
+                            <input type="checkbox" id="check">
+                            <label for="check">Remember me</label>
+                        </div>
+                        <a href="https://www.netflix.com/in/LoginHelp" class="needHelpText">Need help?</a>
+                    </div>
+                </div>
+                <div class="otherHelpMain">
+                    <div class="newSignUp">
+                        <p class="newSignUpText">New to Netflix?</p>
+                        <a href="" class="signUpNowText">Sign up now.</a>
+                    </div>
+                    <div class="captchaDiv">
+                        <p class="captchaText">This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+                        <a href="" class="learnMoreText">Learn more.</a>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>
